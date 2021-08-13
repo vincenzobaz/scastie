@@ -127,7 +127,7 @@ object BuildSettings {
           versionSelector(scalaVersion, ScalaTarget.Typelevel.apply)
 
         case d: ScalaTarget.Scala3 =>
-          versionSelector(d.scala3version, ScalaTarget.Scala3.apply)
+          versionSelector(d.scalaVersion, ScalaTarget.Scala3.apply)
 
         case js: ScalaTarget.Js =>
           div(s"${js.scalaJsVersion} on Scala ${js.scalaVersion}")
