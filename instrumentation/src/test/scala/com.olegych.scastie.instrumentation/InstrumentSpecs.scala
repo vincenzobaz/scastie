@@ -49,6 +49,10 @@ class InstrumentSpecs extends AnyFunSuite {
       Instrument("object Main { def main(args: Array[String]): Unit = () }", ScalaTarget.Jvm.default)
   }
 
+  test("Issue 548") {
+      val Right(result) = Instrument("List(1,2,3).map { using i: Int => i }", ScalaTarget.Scala3.default)
+  }
+
   test("extends App trait fails") {
     val Left(HasMainMethod) =
       Instrument("object Main extends App { }", ScalaTarget.Jvm.default)
